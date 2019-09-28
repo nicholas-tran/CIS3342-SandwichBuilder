@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>Sandwich Builder</title>
+    <script>
+        function validateForm() {
+            var name = document.forms["frmSandwichBuilder"]["name"].value;
+            if (name == " ") {
+                alert("Name cannot be blank.")
+                return false;
+            }
+            var phone = document.forms["frmSandwichBuilder"]["phone"].value;
+            if (isNaN(phone)) {
+                alert("Phone number must be only numbers.");
+                return false;
+            }
+            else if (phone.length != 10) {
+                alert("Phone number must be valid length");
+                return false;
+            }
+            else if (phone == ("          ")) {
+                alert("No white spaces allowed.");
+                return false;
+            }
+            var num = document.forms["frmSandwichBuilder"]["tip"].value;
+            if (num < 0) {
+                alert("Tip must be positive.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id ="header">
+        <h1>Nick's Sandwich Shop - Sandwich Builder</h1>
+    </div>
+    <form id="frmSandwichBuilder" method="post" action="Default.aspx" onsubmit= "return validateForm()">
+        <div id="form">
+            <div id="selection">
+                Name:<input type="text" name="name" required> Phone Number:<input type="text" name="phone" required>
+                </div>
+                <div id="selection">
+                    Choose your size:
+                    <select name="size">
+                        <option value="Kids">Kids</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Extra Large">Extra Large</option>
+                    </select>
+                </div>
+                <div id="selection">
+                    Toasted:<br />
+                    <input type="radio" name="toast" required value="Yes"> Yes
+                    <input type="radio" name="toast" checked value="No"> No
+                </div>
+                <div id="selection">
+                    Spread:<br />
+                    <input id="spread1" type="checkbox" name="spread" value=" Mayo" />Mayo<br />
+                    <input id="spread2" type="checkbox" name="spread" value=" Mustard" />Mustard<br />
+                    <input id="spread3" type="checkbox" name="spread" value=" Avocado" />Avocado<br />
+                    <input id="spread4" type="checkbox" name="spread" value=" Caesar" />Caesar<br />
+                    <input id="spread5" type="checkbox" name="spread" value=" Ranch" />Ranch<br />
+                </div>
+                <div id="selection">
+                    Vegetables:<br />
+                    <input id="vegetable1" type="checkbox" name="vegetables" value=" Lettuce" />Lettuce<br />
+                    <input id="vegetable2" type="checkbox" name="vegetables" value=" Tomato" />Tomato<br />
+                    <input id="vegetable3" type="checkbox" name="vegetables" value=" Onions" />Onions<br />
+                    <input id="vegetable4" type="checkbox" name="vegetables" value=" Pickles" />Pickles<br />
+                    <input id="vegetable4" type="checkbox" name="vegetables" value=" Peppers" />Peppers<br />
+                </div>
+                <div id="selection">
+                    Premium Additions:<br />
+                    <input id="addition2" type="checkbox" name="premiumAddition" value=" Bacon" />Bacon<br />
+                    <input id="addition3" type="checkbox" name="premiumAddition" value=" Chicken" />Chicken<br />
+                    <input id="addition1" type="checkbox" name="premiumAddition" value=" Turkey" />Turkey<br />
+                    <input id="addition4" type="checkbox" name="premiumAddition" value=" Cheddar" />Cheddar<br />
+                    <input id="addition5" type="checkbox" name="premiumAddition" value=" American Cheese" />American Cheese<br />
+                    <input id="addition6" type="checkbox" name="premiumAddition" value=" Pepperjack" />Pepperjack<br />
+                </div>
+                <div id="selection">
+                Meal Options:
+                <select name="meal">
+                    <option value="No">No</option>
+                    <option value="Drink and Chips">Drink and Chips</option>
+                    <option value="Drink and Fruits">Drink and Fruits</option>
+                    <option value="Drink and Cookie">Drink and Cookie</option>
+                    <option value="Drink and Snackbar">Drink and Snackbar</option>
+                </select>
+                </div>
+                <div id="selection">
+                    <br />Tip:<input type="number" name="tip"><br>
+                </div>
+                <br />
+            <input type="submit" value="Confirm" style="margin:5px;">
+            </div>
+    </form>
+</body>
+</html>

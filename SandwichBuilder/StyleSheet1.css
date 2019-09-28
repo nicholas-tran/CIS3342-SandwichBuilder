@@ -1,0 +1,47 @@
+﻿body {
+    position: relative;
+    background-image: url(images/background.jpg);
+}
+
+#header {
+    position: relative;
+    border: solid;
+    border-color: black;
+    text-align: center;
+    margin: 5px;
+    min-width: 510px;
+    background-color: rgba(0, 148, 255, .8);
+}
+
+#form {
+    position: relative;
+    background-color: rgba(248, 162, 100, .9);
+    border-bottom: solid;
+    border-left: solid;
+    border-right: solid;
+    border-color: black;
+    margin: 10px;
+    top: -10px;
+    min-width: 500px;
+}
+
+#selection {
+    position: relative;
+    border: solid;
+    border-color: black;
+    margin: 5px;
+    padding: 5px;
+    top: 5px;
+}
+
+#receipt {
+    border: solid;
+    top: 100px;
+    width: 100%;
+    background-color: rgb(248, 162, 100);
+    position:absolute;
+
+}
+
+
+
